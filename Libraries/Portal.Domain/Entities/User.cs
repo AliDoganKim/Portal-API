@@ -12,5 +12,11 @@ namespace Portal.Domain.Entities
         public string Email { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public virtual ICollection<Article> Articles { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
+
+        public virtual ICollection<Contact> Contacts { get; set; }
     }
 }
