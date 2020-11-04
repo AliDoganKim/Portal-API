@@ -1,7 +1,5 @@
 ﻿using Portal.Domain.Common;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Portal.Domain.Entities
 {
@@ -14,5 +12,7 @@ namespace Portal.Domain.Entities
         public string FileName { get; set; }
 
         public MediaType MediaType { get; set; }
+
+        public virtual ICollection<ArticleMedia> ArticleMedias { get; set; }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Portal.Domain.Common
+﻿namespace Portal.Domain.Common
 {
     public enum MaxLengthSize
     {
