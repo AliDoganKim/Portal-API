@@ -2,9 +2,6 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Portal.Domain.Common;
 using Portal.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Portal.Infrastructure.Persistence.Configurations.Articles
 {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Portal.Domain.Entities
+﻿namespace Portal.Domain.Entities
 {
     public class ArticleMedia
     {

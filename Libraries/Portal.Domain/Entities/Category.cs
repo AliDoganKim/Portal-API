@@ -1,7 +1,5 @@
 ﻿using Portal.Domain.Common;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Portal.Domain.Entities
 {
@@ -20,5 +18,7 @@ namespace Portal.Domain.Entities
         public int? ParentId { get; set; }
 
         public Category Parent { get; set; }
+
+        public virtual ICollection<ArticleCategory> ArticleCategories { get; set; }
     }
 }
