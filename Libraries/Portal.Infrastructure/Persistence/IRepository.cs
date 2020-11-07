@@ -20,11 +20,11 @@ namespace Portal.Infrastructure.Persistence
 
         T InsertWithoutCommit(T entity);
 
-        void InsertBulk(IEnumerable<T> entities);
+        int InsertBulk(IEnumerable<T> entities);
 
-        void Update(T entity);
+        int Update(T entity);
 
-        void UpdateWithoutCommit(T entity);
+        int UpdateWithoutCommit(T entity);
 
         int Delete(T entity);
 
@@ -32,7 +32,7 @@ namespace Portal.Infrastructure.Persistence
 
         int Commit();
 
-        void DeleteBulk(IEnumerable<T> entities);
+        int DeleteBulk(IEnumerable<T> entities);
 
         bool Any(Expression<Func<T, bool>> expression);
     }
