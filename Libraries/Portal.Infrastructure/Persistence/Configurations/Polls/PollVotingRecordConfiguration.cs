@@ -8,7 +8,8 @@ namespace Portal.Infrastructure.Persistence.Configurations.Polls
     {
         public void Configure(EntityTypeBuilder<PollVotingRecord> builder)
         {
-            builder.Property(s => new { s.PollId, s.PollAnswerId }).IsRequired();
+            builder.Property(s => s.PollId).IsRequired();
+            builder.Property(s => s.PollAnswerId).IsRequired();
         }
     }
 }
