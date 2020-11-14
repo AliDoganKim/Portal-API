@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,8 +28,9 @@ namespace Portal.API
         {
             services.InjectApplicationServices();
             services.AddCustomizedDataStore(Configuration);
-
-            services.AddControllers();
+            services.IntegrateSwagger(Configuration);
+            services.AddControllers()
+                .AddFluentValidation(m => m.RegisterValidatorsFromAssemblyContaining<Startup>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,11 +40,10 @@ namespace Portal.API
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.ConfigSwagger();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
