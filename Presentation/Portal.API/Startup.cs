@@ -29,6 +29,7 @@ namespace Portal.API
             services.InjectApplicationServices();
             services.AddCustomizedDataStore(Configuration);
             services.IntegrateSwagger(Configuration);
+            services.AddApplication();
             services.AddControllers()
                 .AddFluentValidation(m => m.RegisterValidatorsFromAssemblyContaining<Startup>());
         }
